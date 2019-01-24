@@ -1,9 +1,10 @@
-//
-//  hmw_2_2.cpp
-//  
-//
-//  Created by Arian Owji on 1/24/19.
-//
+/*
+
+Homework 2_2
+Arian Owji
+604649619
+
+*/
 
 #include <iostream>
 
