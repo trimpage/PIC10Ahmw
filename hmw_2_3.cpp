@@ -27,6 +27,7 @@ int main()
 			sum += x;
 			sumSquares += (pow(x, 2));
 		}
+		
 		double mean = sum / count;
 		double deviation = (sqrt((sumSquares - ((pow(sum, 2)) / count)) / (count - 1)));
 
