@@ -41,6 +41,7 @@ int main()
 		std::cout << "Continue? <y/n> ";
 		std::cin >> response;
 		std::cout << endl;
+		
 		count = 0;
 		sum = 0;
 		sumSquares = 0;
