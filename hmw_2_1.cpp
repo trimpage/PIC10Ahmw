@@ -14,10 +14,10 @@ using namespace std;
 
 int main()
 {
+    char response = 'y';
     int max = -2147483647;
     int min = 2147483647;
     int x;
-    char response = 'y';
     
     while (response == 'y') {
         std::cout << "Enter a list of integers: ";
