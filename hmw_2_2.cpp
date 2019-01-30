@@ -14,8 +14,8 @@ using namespace std;
 
 int main()
 {
-    int x;
     char response = 'y';
+    int x;
     
     while (response == 'y') {
         std::cout << "Enter a list of total scores: ";
