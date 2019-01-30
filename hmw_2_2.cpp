@@ -7,6 +7,8 @@ Arian Owji
 */
 
 #include <iostream>
+#include <string>
+#include <sstream>
 
 using namespace std;
 
@@ -18,7 +20,13 @@ int main()
     while (response == 'y') {
         std::cout << "Enter a list of total scores: ";
         
-        while (std::cin >> x) {
+        string line;
+        getline(cin, line);
+        stringstream ss(line);
+        
+        while (!ss.eof()) {
+            ss >> x;
+            
             if ((x >= 90) && (x <= 100)) {
                 std::cout << "   " << x << " -> A" << endl;
             } else if ((x >= 87) && (x < 90)) {
@@ -46,11 +54,10 @@ int main()
             }
         }
         std::cout << endl;
-        std::cin.clear();
-        std::cin.ignore(10000, '\n');
         std::cout << "Continue? <y/n> ";
         std::cin >> response;
         std::cout << endl;
+        std::cin.get();
     }
     return 0;
 }
