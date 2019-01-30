@@ -13,12 +13,11 @@ using namespace std;
 
 int main()
 {
+	char response = 'y';
 	int fold1 = 0;
 	int fold2 = 1;
 	int counter = 1;
 	int x;
-
-	char response = 'y';
 
 	while (response == 'y') {
 		std::cout << "Enter a positive integer: ";
