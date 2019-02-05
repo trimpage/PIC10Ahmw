@@ -37,7 +37,7 @@ int main()
         if (leap_year(year) == 1) {
             std::cout << year << " is a leap year." << endl;
         } else {
-            std::cout << year << " is not a leap year." << endl;
+            std::cout << year << " is NOT a leap year." << endl;
         }
         
         std::cout << "Continue <y/n>? ";
