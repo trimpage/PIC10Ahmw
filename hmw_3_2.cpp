@@ -13,23 +13,23 @@
 using namespace std;
 
 double get_double(string prompt) {
-    double response;
+    double input;
     
     std::cout << prompt;
-    std::cin >> response;
+    std::cin >> input;
     
     if(cin.fail()) {
         exit(1);
     }
     
-    return response;
+    return input;
 }
 
 int main()
 {
-    char cont = 'y';
+    char response = 'y';
     
-    while (cont == 'y') {
+    while (response == 'y') {
         double old_salary = get_double ("Please enter your salary: ");
         double raise = get_double ("What percentage raise would you like? ");
     
@@ -37,7 +37,7 @@ int main()
     
         std::cout << "Ok. Your new salary is " << fixed << setprecision(2) << new_salary << endl;
         std::cout << "Continue <y/n>? ";
-        std::cin >> cont;
+        std::cin >> response;
     }
     
     return 0;
