@@ -120,7 +120,7 @@ int main()
 
 		employee.print();
 
-		std::cout << "Continue <y/n>? ";
+		std::cout << "Continue? <y/n> ";
 		std::cin >> response;
 		std::cout << endl;
 		cin.clear();
