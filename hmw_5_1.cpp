@@ -12,7 +12,7 @@ Arian Owji
 using namespace std;
 
 class Person {
-public: 
+public:
 	Person();
 	Person(string pname, int page);
 	string get_name() const;
@@ -22,7 +22,7 @@ private:
 	int age; // 0 if unknown
 };
 
-Person::Person():name(""), age(0) {}
+Person::Person() :name(""), age(0) {}
 
 Person::Person(string pname, int page) {
 	name = pname;
@@ -38,7 +38,7 @@ int Person::get_age() const {
 }
 
 class PEmployee {
-public: 
+public:
 	PEmployee();
 	PEmployee(string employee_name, int employee_age, double initial_salary);
 	void set_salary(double new_salary);
@@ -83,13 +83,15 @@ void PEmployee::print() const {
 		"Salary = $" << PEmployee::get_salary() << endl << endl;
 }
 
-void incorrect_input_test() {
-	std::cout << "Incorrect input. Exit!" << endl;
-	system("pause");
-	exit(0);
+void incorrect_input_test(double input) {
+	if ((cin.fail()) || input < 0) {
+		std::cout << "Incorrect input. Exit!" << endl << endl;
+		system("pause");
+		exit(0);
+	}
 }
 
-int main() 
+int main()
 {
 	char response = 'y';
 
@@ -101,26 +103,23 @@ int main()
 		std::cout << "Enter information on the employee." << endl;
 		std::cout << "Enter the name: ";
 		getline(cin, input_name);
+
 		std::cout << "Enter the age: ";
 		std::cin >> input_age;
 
-		if (cin.fail()) { 
-			incorrect_input_test();
-		}
+		incorrect_input_test(input_age);
 
 		std::cout << "Enter the salary: ";
 		std::cin >> input_salary;
 
-		if (cin.fail()) {
-			incorrect_input_test();
-		}
+		incorrect_input_test(input_salary);
 
 		std::cout << endl;
 
 		PEmployee employee(input_name, input_age, input_salary);
 
 		employee.print();
-		
+
 		std::cout << "Continue <y/n>? ";
 		std::cin >> response;
 		std::cout << endl;
