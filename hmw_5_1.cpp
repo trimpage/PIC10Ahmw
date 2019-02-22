@@ -83,7 +83,7 @@ void PEmployee::print() const {
 		"Salary = $" << PEmployee::get_salary() << endl << endl;
 }
 
-void incorrect_input_function() {
+void incorrect_input() {
 	std::cout << "Incorrect input. Exit!" << endl;
 	system("pause");
 	exit(0);
@@ -105,14 +105,14 @@ int main()
 		std::cin >> input_age;
 
 		if (cin.fail()) { 
-			incorrect_input_function();
+			incorrect_input();
 		}
 
 		std::cout << "Enter the salary: ";
 		std::cin >> input_salary;
 
 		if (cin.fail()) {
-			incorrect_input_function();
+			incorrect_input();
 		}
 
 		std::cout << endl;
