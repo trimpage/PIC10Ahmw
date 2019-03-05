@@ -49,13 +49,14 @@ double Country::get_density() const {
 	return density;
 }
 
-void incorrect_input_test(double input) {
+bool incorrect_input_test(double input) {
 	if ((cin.fail()) || input < 0) {
 		std::cout << "Incorrect input. Exit!" << endl << endl;
 
-		system("pause");
-		exit(0);
+		return true;
 	}
+	else 
+		return false;
 }
 
 int main() {
@@ -75,12 +76,18 @@ int main() {
 		std::cout << "Enter the population: ";
 		std::cin >> input_population;
 
-		incorrect_input_test(input_population);
+		if (incorrect_input_test(input_population)) {
+			response = 'n';
+			continue;
+		}
 
 		std::cout << "Enter the area <km^2>: ";
 		std::cin >> input_area;
 
-		incorrect_input_test(input_area);
+		if (incorrect_input_test(input_area)) {
+			response = 'n';
+			continue;
+		}
 
 		double result_density = input_population / input_area;
 
@@ -90,7 +97,7 @@ int main() {
 		std::cin >> response;
 		std::cout << endl;
 		cin.ignore();
-		cin.clear(1000, '\n');
+		cin.clear(1000);
 	}
 
 	string largest_area = "";
