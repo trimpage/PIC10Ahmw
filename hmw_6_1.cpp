@@ -5,23 +5,24 @@ Arian Owji
 604649619
 
 */
-/*
+
 #include <iostream>
 #include <vector>
 #include <string>
+#include <sstream>
 
 using namespace std;
 
 int sum(vector<int> a) {
 	int n = a.size();
-	double sum = 0;
+	int sum = 0;
 
 	for (int i = 0; i < n; i++) {
-		if (i != 0 && (i % 2) == 0) {
-			sum -= a[n];
+		if (i != 0 && ((i % 2) == 1)) {
+			sum -= a[i];
 		}
 		else {
-			sum += a[n];
+			sum += a[i];
 		}
 	}
 	return sum;
@@ -29,19 +30,27 @@ int sum(vector<int> a) {
 
 int main() {
 	char response = 'y';
-	int input;
-	vector<int> list;
+	string input;
+	int number;
 
 	while (response == 'y') {
+		vector<int> list;
+
 		std::cout << "Enter a list of integers: ";
-		while (cin >> input) {
-			list.push_back(input);
+		getline(cin, input);
+
+		istringstream stream(input);
+		while (stream >> number) {
+			list.push_back(number);
 		}
 
 		std::cout << "The alternate sum = " << sum(list) << endl << endl;
 
-		std::cout << "Continue <y/n>?";
+		std::cout << "Continue <y/n>? ";
 		std::cin >> response;
+		std::cout << endl;
+		cin.clear();
+		cin.ignore(1000, '\n');
 	}
 	return 0;
-}*/
+}
