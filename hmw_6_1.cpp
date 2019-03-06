@@ -30,10 +30,10 @@ int sum(vector<int> a) {
 
 int main() {
 	char response = 'y';
-	string input;
-	int number;
 
 	while (response == 'y') {
+		string input;
+		int number;
 		vector<int> list;
 
 		std::cout << "Enter a list of integers: ";
